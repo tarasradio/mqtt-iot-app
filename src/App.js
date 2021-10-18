@@ -58,7 +58,7 @@ function App() {
 
 
   const connection = (host, port, clientId, username, password) => {
-    const url = `ws://${host}:${port}/mqtt`;
+    const url = `wss://${host}:${port}/mqtt`;
     const options = {
       keepalive: 30,
       protocolId: 'MQTT',
