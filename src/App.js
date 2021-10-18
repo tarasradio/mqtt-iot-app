@@ -58,7 +58,7 @@ function App() {
 
 
   const connection = (host, port, clientId, username, password) => {
-    const url = `wss://${host}:${port}/mqtt`;
+    const url = `ws://${host}:${port}/mqtt`;
     const options = {
       keepalive: 30,
       protocolId: 'MQTT',
@@ -86,7 +86,7 @@ function App() {
   }
 
   const loveButtonClick = () => {
-    mqttPublish({topic:'tarasradio/heart', payload:'1', qos:2})
+    mqttPublish({topic:'tarasradio/heart', payload:'on', qos:2})
     setCountOfClicks(countOfClicks + 1);
 
     document.getElementById('firstText').hidden = (countOfClicks > 0);
