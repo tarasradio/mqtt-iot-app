@@ -93,6 +93,10 @@ function App() {
     document.getElementById('hiddenText').hidden = (countOfClicks == 0);
   }
 
+  const handButtonClick = () => {
+    mqttPublish({topic:'tarasradio/heart', payload:'hand', qos:2})
+  }
+
   return (
     <div className="App">
       <div className="container-fluid">
@@ -113,10 +117,18 @@ function App() {
           onClick={()=>loveButtonClick()}>
           Я тебя люблю!
         </button >
+        <button 
+          id='HandButton' 
+          type='button' 
+          hidden='true' 
+          className='btn btn-outline-danger btn-lg mt-3' 
+          onClick={()=>handButtonClick()}>
+          Помахать рукой
+        </button >
         <p className='mt-3'>Привет, Полина!</p>
         <p>Сначала, нажми "Подключиться"</p>
-        <p id='firstText'>Затем, смотря на Пашу, нажми "Я тебя люблю")))</p>
-        <p id='hiddenText' hidden='true'>Нажимай на кнопку чтобы зажигать сердце!</p>
+        <p id='firstText'>Теперь у тебя есть возможность не только зажигать сердце)</p>
+        <p id='hiddenText' hidden='true'>Нажимай на кнопку чтобы махать рукой!</p>
       </div>
       
     </div>
