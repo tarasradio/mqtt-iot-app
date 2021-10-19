@@ -19,6 +19,7 @@ function App() {
         setConnectStatus('Подключение установленно');
         document.getElementById('iLoveYouButton').hidden = false;
         document.getElementById('handButton').hidden = false;
+        document.getElementById('lampButton').hidden = false;
         document.getElementById('connectionButton').hidden = true;
       });
       client.on('error', (err) => {
@@ -98,6 +99,10 @@ function App() {
     mqttPublish({topic:'tarasradio/heart', payload:'hand', qos:2})
   }
 
+  const lampButtonClick = () => {
+    mqttPublish({topic:'tarasradio/heart', payload:'lampOn', qos:2})
+  }
+
   return (
     <div className="App">
       <div className="container-fluid">
@@ -125,6 +130,14 @@ function App() {
           className='btn btn-outline-primary btn-lg mt-3' 
           onClick={()=>handButtonClick()}>
           Помахать рукой
+        </button >
+        <button 
+          id='lampButton' 
+          type='button' 
+          hidden='true' 
+          className='btn btn-outline-primary btn-lg mt-3' 
+          onClick={()=>lampButtonClick()}>
+          Включить лампу
         </button >
         <p className='mt-3'>Привет, Полина!</p>
         <p>Сначала, нажми "Подключиться"</p>
