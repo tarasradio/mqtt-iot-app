@@ -18,6 +18,7 @@ function App() {
       client.on('connect', () => {
         setConnectStatus('Подключение установленно');
         document.getElementById('iLoveYouButton').hidden = false;
+        document.getElementById('handButton').hidden = false;
         document.getElementById('connectionButton').hidden = true;
       });
       client.on('error', (err) => {
@@ -121,7 +122,7 @@ function App() {
           id='HandButton' 
           type='button' 
           hidden='true' 
-          className='btn btn-outline-danger btn-lg mt-3' 
+          className='btn btn-outline-primary btn-lg mt-3' 
           onClick={()=>handButtonClick()}>
           Помахать рукой
         </button >
