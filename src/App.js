@@ -119,7 +119,7 @@ function App() {
           Я тебя люблю!
         </button >
         <button 
-          id='HandButton' 
+          id='handButton' 
           type='button' 
           hidden='true' 
           className='btn btn-outline-primary btn-lg mt-3' 
