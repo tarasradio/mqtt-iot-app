@@ -174,6 +174,21 @@ function RobotControl() {
               </button>
             </td>
           </tr>
+          <tr>
+            <td colspan='2'>
+            <button 
+                id='tailButton' 
+                type='button' 
+                className='rc-btn btn btn-danger btn-lg'
+                onTouchStart={()=>{robotControlClick('tail-wag')}}
+                onTouchEnd={()=>{robotControlClick('tail-stop')}}
+                onMouseDown={()=>{robotControlClick('tail-wag')}}
+                onMouseUp={()=>{robotControlClick('tail-stop')}}
+              >
+                Wag the tail
+              </button>
+            </td>
+          </tr>
         </table>
       </Container>
     </div>
