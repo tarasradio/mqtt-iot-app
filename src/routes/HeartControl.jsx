@@ -86,6 +86,7 @@ export default function HeartControl() {
 
   const heartControlClick = (command) => {
     mqttPublish({topic:'tarasradio/heart', payload:command, qos:0})
+    document.getElementById('meTooMessage').hidden = false;
   }
 
   return (
@@ -124,6 +125,7 @@ export default function HeartControl() {
               >
                 Я тебя люблю!
         </button>
+        <h1 id='meTooMessage' hidden='true'>И я тебя люблю =)</h1>
       </Container>
     </div>
   );
