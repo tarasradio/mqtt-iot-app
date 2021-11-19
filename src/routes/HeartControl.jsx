@@ -1,6 +1,8 @@
 import './Control.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import heartImg from './dog.png'
+
 import React, { useState, useEffect } from 'react';
 import { Container, Navbar, Nav, Collapse, NavDropdown } from 'react-bootstrap';
 import mqtt from 'mqtt';
@@ -87,6 +89,7 @@ export default function HeartControl() {
   const heartControlClick = (command) => {
     mqttPublish({topic:'tarasradio/heart', payload:command, qos:0})
     document.getElementById('meTooMessage').hidden = false;
+    document.getElementById('dogImg').hidden = false;
   }
 
   return (
@@ -125,7 +128,9 @@ export default function HeartControl() {
               >
                 Я тебя люблю!
         </button>
-        <h1 id='meTooMessage' hidden='true'>И я тебя люблю =)</h1>
+        <br></br>
+        <img id='dogImg'className='dogImgStyle' hidden = 'true' src={heartImg} height='200px'></img>
+        <h1 id='meTooMessage'  hidden='true'>И я тебя люблю =)</h1>
       </Container>
     </div>
   );
