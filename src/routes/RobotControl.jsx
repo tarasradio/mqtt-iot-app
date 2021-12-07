@@ -122,10 +122,10 @@ function RobotControl() {
                 id='forwardButton' 
                 type='button'
                 className='rc-btn btn btn-primary btn-lg'
-                onTouchStart={()=>{robotControlClick('forward')}}
-                onTouchEnd={()=>{robotControlClick('stop')}}
-                onMouseDown={()=>{robotControlClick('forward')}}
-                onMouseUp={()=>{robotControlClick('stop')}}
+                onPointerDown={()=>{robotControlClick('forward')}}
+                onPointerUp={()=>{robotControlClick('stop')}}
+                // onMouseDown={()=>{robotControlClick('forward')}}
+                // onMouseUp={()=>{robotControlClick('stop')}}
               >
                 Forward
               </button>
@@ -137,10 +137,10 @@ function RobotControl() {
                 id='turnLeftButton' 
                 type='button' 
                 className='rc-btn btn btn-primary btn-lg'
-                onTouchStart={()=>{robotControlClick('turn-left')}}
-                onTouchEnd={()=>{robotControlClick('stop')}}
-                onMouseDown={()=>{robotControlClick('turn-left')}}
-                onMouseUp={()=>{robotControlClick('stop')}}
+                onPointerDown={()=>{robotControlClick('turn-left')}}
+                onPointerUp={()=>{robotControlClick('stop')}}
+                // onMouseDown={()=>{robotControlClick('turn-left')}}
+                // onMouseUp={()=>{robotControlClick('stop')}}
               >
                 Turn Left
               </button>
@@ -150,10 +150,10 @@ function RobotControl() {
                 id='turnRightButton' 
                 type='button' 
                 className='rc-btn btn btn-primary btn-lg'
-                onTouchStart={()=>{robotControlClick('turn-right')}}
-                onTouchEnd={()=>{robotControlClick('stop')}}
-                onMouseDown={()=>{robotControlClick('turn-right')}}
-                onMouseUp={()=>{robotControlClick('stop')}}
+                onPointerDown={()=>{robotControlClick('turn-right')}}
+                onPointerUp={()=>{robotControlClick('stop')}}
+                // onMouseDown={()=>{robotControlClick('turn-right')}}
+                // onMouseUp={()=>{robotControlClick('stop')}}
               >
                 Turn Right
               </button>
@@ -165,10 +165,8 @@ function RobotControl() {
                 id='forwardButton' 
                 type='button' 
                 className='rc-btn btn btn-primary btn-lg'
-                onTouchStart={()=>{robotControlClick('backward')}}
-                onTouchEnd={()=>{robotControlClick('stop')}}
-                onMouseDown={()=>{robotControlClick('backward')}}
-                onMouseUp={()=>{robotControlClick('stop')}}
+                onPointerDown={()=>{robotControlClick('backward')}}
+                onPointerUp={()=>{robotControlClick('stop')}}
               >
                 Backward
               </button>
@@ -180,12 +178,25 @@ function RobotControl() {
                 id='tailButton' 
                 type='button' 
                 className='rc-btn btn btn-danger btn-lg'
-                onTouchStart={()=>{robotControlClick('tail-wag')}}
-                onTouchEnd={()=>{robotControlClick('tail-stop')}}
                 onMouseDown={()=>{robotControlClick('tail-wag')}}
                 onMouseUp={()=>{robotControlClick('tail-stop')}}
+                onPointerDown={()=>{robotControlClick('tail-wag')}}
+                onPointerUp={()=>{robotControlClick('tail-stop')}}
               >
                 Wag the tail
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td colspan='2'>
+            <button 
+                id='signalButton' 
+                type='button' 
+                className='rc-btn btn btn-success btn-lg'
+                onPointerDown={()=>{robotControlClick('signal')}}
+                onPointerUp={()=>{robotControlClick('signal-stop')}}
+              >
+                Music!
               </button>
             </td>
           </tr>
